@@ -1,0 +1,1 @@
+function filterAndSummarize(rows,query=''){const selected=rows.filter(row=>row.name.toLowerCase().includes(query.toLowerCase()));return{rows:selected,total:selected.reduce((sum,row)=>sum+row.value,0)};}if(require.main===module)console.log(filterAndSummarize([{name:'HPC',value:3},{name:'Java',value:2}],'hpc'));module.exports={filterAndSummarize};
