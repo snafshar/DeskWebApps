@@ -4,7 +4,9 @@ I design application projects around clear user stories, maintainable domain log
 
 ## Featured website: Opportunity Atlas
 
-[Opportunity Atlas](./websites/opportunity-atlas) is an interactive dashboard for filtering funded computer science research opportunities across Northern Europe and building a shortlist.
+**[Open the live website](https://opportunity-atlas.afsharsn.chatgpt.site)** · [View the source](./websites/opportunity-atlas)
+
+Opportunity Atlas is an interactive dashboard for filtering funded computer science research opportunities across Northern Europe and building a shortlist.
 
 I implemented responsive layouts, search, country and field filters, shortlist state, realistic sample data, and clear prototype disclosure using React, TypeScript, and CSS.
 
