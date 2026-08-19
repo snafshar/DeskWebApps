@@ -1,5 +1,7 @@
 # Opportunity Atlas
 
+**[Live website](https://opportunity-atlas.afsharsn.chatgpt.site)**
+
 I designed and implemented Opportunity Atlas as an interactive research-opportunity dashboard. It helps users filter funded computer science positions across Northern Europe and build a shortlist.
 
 ## What I built
@@ -12,7 +14,7 @@ I designed and implemented Opportunity Atlas as an interactive research-opportun
 
 ## Technology
 
-Next.js-compatible React, TypeScript, CSS, and Vinext for Cloudflare deployment.
+React, TypeScript, CSS, Next.js-compatible routing, and Vinext for Cloudflare deployment.
 
 ## Run locally
 
