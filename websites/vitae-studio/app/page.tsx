@@ -19,8 +19,8 @@ import {
 const features = [
   {
     icon: FileCheck2,
-    title: "A format recruiters know",
-    copy: "Build a clear, ATS-friendly CV with the sections hiring teams expect.",
+    title: "Complete by design",
+    copy: "Cover professional, academic, research, project, publication, and Europass fields.",
   },
   {
     icon: LayoutDashboard,
@@ -38,6 +38,7 @@ const templates = [
   { name: "Classic", note: "Precise & traditional", accent: "#173f3a" },
   { name: "Modern", note: "Fresh & balanced", accent: "#c75738" },
   { name: "Executive", note: "Confident & refined", accent: "#24344d" },
+  { name: "Europass", note: "Dedicated European format", accent: "#5e2b97" },
 ];
 
 export default async function Home() {
@@ -106,8 +107,8 @@ export default async function Home() {
           </div>
           <div className="trust-row" aria-label="Product benefits">
             <span><Check /> Live preview</span>
-            <span><Check /> Standard sections</span>
-            <span><Check /> PDF-ready</span>
+            <span><Check /> Inclusive sections</span>
+            <span><Check /> LaTeX & PDF output</span>
           </div>
         </div>
 
@@ -185,7 +186,7 @@ export default async function Home() {
           {templates.map((template, index) => (
             <article className="template-card" key={template.name}>
               <div
-                className={`template-sheet template-${index + 1}`}
+                className={`template-sheet template-${index + 1} ${template.name === "Europass" ? "template-europass" : ""}`}
                 style={{ "--template-accent": template.accent } as CSSProperties}
               >
                 <span className="template-name-block" />

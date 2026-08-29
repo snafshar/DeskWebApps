@@ -8,7 +8,7 @@ import {
   type ResumeTemplate,
 } from "@/lib/resume-types";
 
-const templates: ResumeTemplate[] = ["classic", "modern", "executive"];
+const templates: ResumeTemplate[] = ["classic", "modern", "executive", "europass"];
 
 function parseContent(value: string) {
   try {

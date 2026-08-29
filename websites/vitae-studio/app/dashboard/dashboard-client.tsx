@@ -116,7 +116,7 @@ export function DashboardClient({ user, signOutHref }: DashboardProps) {
       });
       if (!response.ok) throw new Error("Could not create the CV.");
       const data = (await response.json()) as { resume: ResumeRecord };
-      window.location.href = `/builder/${data.resume.id}`;
+      window.location.href = template === "europass" ? `/europass/${data.resume.id}` : `/builder/${data.resume.id}`;
     } catch (createError) {
       toast.error(createError instanceof Error ? createError.message : "Could not create the CV.");
       setCreating(false);
@@ -178,7 +178,7 @@ export function DashboardClient({ user, signOutHref }: DashboardProps) {
                 <div className="field-stack">
                   <Label>Template</Label>
                   <RadioGroup value={template} onValueChange={(value) => setTemplate(value as ResumeTemplate)} className="template-radio-grid">
-                    {(["classic", "modern", "executive"] as ResumeTemplate[]).map((choice) => (
+                    {(["classic", "modern", "executive", "europass"] as ResumeTemplate[]).map((choice) => (
                       <label className={`template-radio ${template === choice ? "selected" : ""}`} key={choice}>
                         <RadioGroupItem value={choice} />
                         <span className={`mini-template mini-${choice}`}><i /><i /><i /><i /></span>
@@ -249,7 +249,7 @@ export function DashboardClient({ user, signOutHref }: DashboardProps) {
                         <DropdownMenu>
                           <DropdownMenuTrigger asChild><Button variant="ghost" size="icon-sm" aria-label={`More actions for ${resume.title}`}><MoreHorizontal /></Button></DropdownMenuTrigger>
                           <DropdownMenuContent align="end">
-                            <DropdownMenuItem asChild><a href={`/builder/${resume.id}`}>Edit CV</a></DropdownMenuItem>
+                            <DropdownMenuItem asChild><a href={resume.template === "europass" ? `/europass/${resume.id}` : `/builder/${resume.id}`}>Edit CV</a></DropdownMenuItem>
                             <AlertDialog>
                               <AlertDialogTrigger asChild>
                                 <DropdownMenuItem onSelect={(event) => event.preventDefault()} className="text-destructive"><Trash2 /> Delete</DropdownMenuItem>
@@ -264,7 +264,7 @@ export function DashboardClient({ user, signOutHref }: DashboardProps) {
                       </div>
                       <div className="completion-row"><span>Profile completeness</span><strong>{completion}%</strong></div>
                       <Progress value={completion} />
-                      <Button variant="outline" className="edit-resume" asChild><a href={`/builder/${resume.id}`}>Continue editing <ArrowRight /></a></Button>
+                      <Button variant="outline" className="edit-resume" asChild><a href={resume.template === "europass" ? `/europass/${resume.id}` : `/builder/${resume.id}`}>Continue editing <ArrowRight /></a></Button>
                     </div>
                   </article>
                 );

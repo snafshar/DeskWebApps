@@ -11,5 +11,7 @@ test("defines Vitae Studio product metadata and landing content", async () => {
   assert.match(layout, /title:\s*"Vitae Studio"/i);
   assert.match(layout, /standard-format resume/i);
   assert.match(page, /Your experience/i);
+  assert.match(page, /Europass/i);
+  assert.match(page, /LaTeX/i);
   assert.doesNotMatch(layout, /codex-preview/i);
 });

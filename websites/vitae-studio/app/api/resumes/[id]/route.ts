@@ -8,7 +8,7 @@ import {
 } from "@/lib/resume-types";
 
 type RouteContext = { params: Promise<{ id: string }> };
-const templates: ResumeTemplate[] = ["classic", "modern", "executive"];
+const templates: ResumeTemplate[] = ["classic", "modern", "executive", "europass"];
 
 function parseContent(value: string) {
   try {
@@ -54,7 +54,7 @@ export async function PUT(request: Request, context: RouteContext) {
     : undefined;
   const content = payload.content ? normalizeResumeContent(payload.content) : undefined;
   const serialized = content ? JSON.stringify(content) : undefined;
-  if (serialized && serialized.length > 120_000) {
+  if (serialized && serialized.length > 300_000) {
     return Response.json({ error: "CV content is too large" }, { status: 413 });
   }
 
