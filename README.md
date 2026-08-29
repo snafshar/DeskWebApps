@@ -1,6 +1,14 @@
 # Desktop and Web Applications
 
-I design application projects around clear user stories, maintainable domain logic, accessible interaction, and interfaces that work across screen sizes.
+I build desktop and web products around clear user stories, maintainable domain logic, accessible interaction, and interfaces that work across screen sizes.
+
+## Featured full-stack project: Vitae Studio
+
+**[Open the live application](https://vitae-studio.afsharsn.chatgpt.site)** · [View the source](./websites/vitae-studio)
+
+Vitae Studio is a secure online CV builder with account-based dashboards, durable cloud storage, three standard resume templates, automatic saving, a live A4 preview, and PDF-ready output.
+
+I implemented the complete product flow with React, TypeScript, server-rendered protected routes, authenticated APIs, Cloudflare D1, Drizzle migrations, responsive controls, and record-level ownership checks.
 
 ## Featured website: Opportunity Atlas
 
